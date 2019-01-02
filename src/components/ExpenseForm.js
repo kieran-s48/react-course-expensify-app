@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
-import { parse } from 'postcss';
 
 // const now = moment();
 // console.log(now.format('Do Mo Y'));
@@ -16,7 +15,7 @@ export default class ExpenseForm extends React.Component {
             amount: props.expense ? (props.expense.amount / 100).toString() : '',
             createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
             calendarFocused: false,
-            errorState: ''
+            error: ''
         };
     };
 
