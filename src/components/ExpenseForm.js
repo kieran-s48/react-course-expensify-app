@@ -2,9 +2,6 @@ import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 
-// const now = moment();
-// console.log(now.format('Do Mo Y'));
-
 export default class ExpenseForm extends React.Component {
     constructor(props) {
         super(props);
@@ -33,7 +30,7 @@ export default class ExpenseForm extends React.Component {
         if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
           this.setState(() => ({ amount }));
         }
-    };
+      };
     onDateChange = (createdAt) => {
         if (createdAt) {
             this.setState(() => ({ createdAt }));
@@ -51,7 +48,7 @@ export default class ExpenseForm extends React.Component {
             this.setState(() => ({ error: '' }));
             this.props.onSubmit({
                 description: this.state.description,
-                amount: parseFloat(this.state.amount, 10) *100,
+                amount: parseFloat(this.state.amount, 10) * 100,
                 createdAt: this.state.createdAt.valueOf(),
                 note: this.state.note
             });
